@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="bg-neutral-900" style="overflow-x: hidden;">
+    <div class="alert" style="position: fixed;">
+        <div class="div-alert" style="margin-right: 5px;">
+            <svg style="width: 25px; color: red" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+        </div>
+        <p>Can not discount bigger than price</p>
+    </div>
+    <section class="flex flex-col gap-6">
+        <div style="margin-bottom: 0;" class="mb-0 head flex flex-col justify-center m-7 items-center">
+            <h1 class="uppercase text-3xl font-bold text-white" style="margin-bottom: 5px;">ادارة المنتجات</h1>
+            <p class="uppercase text-2xl text-white">تعديل حذف انشاء قراءة</p>
+        </div>
+        <div class="body flex flex-col items-center">
+            <div class="inputs flex flex-col items-center gap-4 w-full p-8">
+                <input type="text" placeholder="العنوان" id="title" class="w-full max-[768px]:text-sm">
+                <div class="total-div flex gap-2 max-[1024px]:flex-col w-full">
+                    <input type="number" placeholder="السعر" id="price" class="basis-1/5 max-[768px]:text-sm">
+                    <input type="number" placeholder="الضرائب" id="taxes" class="basis-1/5 max-[768px]:text-sm">
+                    <input type="number" placeholder="الاعلانات" id="ads" class="basis-1/5 max-[768px]:text-sm">
+                    <input type="number" placeholder="الخصم" id="discounts" class="basis-1/5 max-[768px]:text-sm">
+                    <span class="total rounded-lg dark:text-white max-[1024px]:w-full max-[768px]:text-sm" style="background-color: red;"></span>
+                </div>
+                <input type="text" placeholder="عدد المنتجات" id="count" class="w-full max-[768px]:text-sm">
+                <input type="text" placeholder="التصنيف" id="category" class="w-full max-[768px]:text-sm">
+                <button id="create-btn" class="capitalize w-full max-[768px]:text-sm">انشاء</button>
+                <input type="search" oninput="search_2(this.value)" placeholder="بحث" id="search" class="w-full max-[768px]:text-sm">
+                <div class="searchs w-full flex justify-between gap-11">
+                    <button id="search-1" onclick="getSearch(this.id)" class="flex-1 max-[768px]:text-sm">البحث بواسطة العنوان</button>
+                    <button id="search-2" onclick="getSearch(this.id)" class="flex-1 max-[768px]:text-sm">البحث بواسطة التصنيف</button>
+                </div>
+                <button id="delete-all" class="w-full hide max-[768px]:text-sm">حذف الكل (<span id="all"></span>)</button>
+            </div>
+        </div>
+        <div class="foot flex justify-center m-4">
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-collapse">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr class="text-center">
+                            <th scope="col" class="px-6 py-3">
+                                الرقم
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                عنوان المنتج
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                السعر
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                الضرائب
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                الاعلانات
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                الخصم
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                المجموع
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                التصنيف
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                حذف / تعديل
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
